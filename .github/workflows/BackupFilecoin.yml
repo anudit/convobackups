@@ -15,14 +15,19 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: 16
+
+    - name: Cache pnpm modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-
+
     - uses: pnpm/action-setup@v2.1.0
       with:
         version: 6.0.2
 
-    - uses: actions/cache@v2
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: pnpm install
@@ -39,4 +44,4 @@ jobs:
         REDIS_CONNECTION: ${{ secrets.REDIS_CONNECTION }}
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         CHAINSAFE_STORAGE_API_KEY: ${{ secrets.CHAINSAFE_STORAGE_API_KEY }}
-      run: node ./cron/backupFilecoin.js
+      run: pnpm backup
