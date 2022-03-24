@@ -8,7 +8,6 @@ import { MongoClient } from 'mongodb';
 import { prettyDate, bfjStringify, saveToFile } from './utils.mjs';
 import { storeOnNftStorage } from './adaptors/nftstorage.mjs';
 import { pinToInfura } from './adaptors/infura.mjs';
-import { pinToCrust } from './adaptors/crust.mjs';
 
 const { CHAINSAFE_STORAGE_API_KEY, TEXTILE_PK, TEXTILE_HUB_KEY_DEV, MONGODB_URI, TEXTILE_THREADID, NFTSTORAGE_KEY, PINATA_API_KEY, PINATA_API_SECRET, REDIS_CONNECTION} = process.env;
 
@@ -65,34 +64,34 @@ const getAllTrustScoreData = async () => {
 }
 
 const getData = async () =>{
-    // const threadClient = await getClient();
-    // const threadId = ThreadID.fromString(TEXTILE_THREADID);
+    const threadClient = await getClient();
+    const threadId = ThreadID.fromString(TEXTILE_THREADID);
 
-    // let snapshot_comments = await threadClient.find(threadId, 'comments', {});
-    // console.log("🟡 snapshot.comments");
-    // let snapshot_threads = await threadClient.find(threadId, 'threads', {});
-    // console.log("🟡 snapshot.threads");
-    // let snapshot_addressToThreadIds = await threadClient.find(threadId, 'addressToThreadIds', {});
-    // console.log("🟡 snapshot.addressToThreadIds");
-    // let snapshot_cachedTrustScores = await getAllTrustScoreData();
-    // console.log("🟡 snapshot.cachedTrustScores");
-    // let snapshot_bridge = await threadClient.find(threadId, 'bridge', {});
-    // console.log("🟡 snapshot.bridge");
-    // let redis_data = await getRedisData();
-    // console.log("🟡 snapshot.redis_data");
-
-    // return {
-    //     snapshot_comments,
-    //     snapshot_threads,
-    //     snapshot_addressToThreadIds,
-    //     snapshot_cachedTrustScores,
-    //     snapshot_bridge,
-    //     redis_data
-    // };
+    let snapshot_comments = await threadClient.find(threadId, 'comments', {});
+    console.log("🟡 snapshot.comments");
+    let snapshot_threads = await threadClient.find(threadId, 'threads', {});
+    console.log("🟡 snapshot.threads");
+    let snapshot_addressToThreadIds = await threadClient.find(threadId, 'addressToThreadIds', {});
+    console.log("🟡 snapshot.addressToThreadIds");
+    let snapshot_cachedTrustScores = await getAllTrustScoreData();
+    console.log("🟡 snapshot.cachedTrustScores");
+    let snapshot_bridge = await threadClient.find(threadId, 'bridge', {});
+    console.log("🟡 snapshot.bridge");
+    let redis_data = await getRedisData();
+    console.log("🟡 snapshot.redis_data");
 
     return {
-        hello: 'world'
-    }
+        snapshot_comments,
+        snapshot_threads,
+        snapshot_addressToThreadIds,
+        snapshot_cachedTrustScores,
+        snapshot_bridge,
+        redis_data
+    };
+
+    // return {
+    //     hello: 'world'
+    // }
 }
 
 async function runPipeline(){
@@ -107,7 +106,6 @@ async function runPipeline(){
             console.log('🟢 NFT.Storage Backup Successful');
 
             await pinToInfura(nftStorageResp);
-            await pinToCrust(nftStorageResp);
         }
     }
     else {

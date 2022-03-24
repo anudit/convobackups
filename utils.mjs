@@ -10,7 +10,8 @@ export function prettyDate() {
     const month = monthNames[dt.getMonth()];
     const y = dt.getFullYear();
     const hh = dt.getHours();
-    return `${d}-${month}-${y}-${hh}`;
+    const mm = dt.getMinutes();
+    return `${d}-${month}-${y}-${hh}-${mm}`;
 }
 
 export async function bfjStringify(data){
