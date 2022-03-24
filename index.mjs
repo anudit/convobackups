@@ -106,8 +106,8 @@ async function runPipeline(){
         if (nftStorageResp.slice(0, 3) === 'baf'){
             console.log('🟢 NFT.Storage Backup Successful');
 
-            await pinToInfura(ipfsHash);
-            await pinToCrust(ipfsHash);
+            await pinToInfura(nftStorageResp);
+            await pinToCrust(nftStorageResp);
         }
     }
     else {
