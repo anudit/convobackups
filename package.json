@@ -21,10 +21,10 @@
     "bfj": "^7.0.2",
     "dotenv": "^16.0.0",
     "ethers": "^5.6.1",
+    "form-data": "^4.0.0",
     "ioredis": "^4.28.5",
-    "ipfs-http-client": "54.0.2",
     "mongodb": "^4.4.1",
-    "nft.storage": "^6.0.2",
+    "nft.storage": "^6.1.0",
     "node-fetch": "^3.2.3"
   }
 }

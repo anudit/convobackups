@@ -5,10 +5,10 @@ specifiers:
   bfj: ^7.0.2
   dotenv: ^16.0.0
   ethers: ^5.6.1
+  form-data: ^4.0.0
   ioredis: ^4.28.5
-  ipfs-http-client: 54.0.2
   mongodb: ^4.4.1
-  nft.storage: ^6.0.2
+  nft.storage: ^6.1.0
   node-fetch: ^3.2.3
 
 dependencies:
@@ -16,10 +16,10 @@ dependencies:
   bfj: 7.0.2
   dotenv: 16.0.0
   ethers: 5.6.1
+  form-data: 4.0.0
   ioredis: 4.28.5
-  ipfs-http-client: 54.0.2_node-fetch@3.2.3
   mongodb: 4.4.1
-  nft.storage: 6.0.2_node-fetch@3.2.3
+  nft.storage: 6.1.0_node-fetch@3.2.3
   node-fetch: 3.2.3
 
 packages:
@@ -901,6 +901,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /asynckit/0.4.0:
+    resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
+    dev: false
+
   /available-typed-arrays/1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
@@ -1081,6 +1085,13 @@ packages:
     resolution: {integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=}
     dev: false
 
+  /combined-stream/1.0.8:
+    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      delayed-stream: 1.0.0
+    dev: false
+
   /concat-map/0.0.1:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: false
@@ -1125,6 +1136,11 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       object-keys: 1.1.1
+    dev: false
+
+  /delayed-stream/1.0.0:
+    resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
+    engines: {node: '>=0.4.0'}
     dev: false
 
   /denque/1.5.1:
@@ -1319,6 +1335,15 @@ packages:
 
   /foreach/2.0.5:
     resolution: {integrity: sha1-C+4AUBiusmDQo6865ljdATbsG5k=}
+    dev: false
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
     dev: false
 
   /formdata-polyfill/4.0.10:
@@ -1590,33 +1615,6 @@ packages:
       nanoid: 3.3.1
       parse-duration: 1.0.2
       timeout-abort-controller: 1.1.1
-      uint8arrays: 3.0.0
-    transitivePeerDependencies:
-      - node-fetch
-      - supports-color
-    dev: false
-
-  /ipfs-http-client/54.0.2_node-fetch@3.2.3:
-    resolution: {integrity: sha512-gPTD+Hy7UdiM+Ez9n+PJmSQ5m1fShhDhIkZ+lTY2L9p7KFOU643qACqUrdZZjlZIRWHg4htHSYNPnTRh2bjOjA==}
-    engines: {node: '>=14.0.0', npm: '>=3.0.0'}
-    dependencies:
-      '@ipld/dag-cbor': 6.0.15
-      '@ipld/dag-pb': 2.1.16
-      abort-controller: 3.0.0
-      any-signal: 2.1.2
-      debug: 4.3.4
-      err-code: 3.0.1
-      ipfs-core-types: 0.8.4_node-fetch@3.2.3
-      ipfs-core-utils: 0.12.2_node-fetch@3.2.3
-      ipfs-utils: 9.0.5
-      it-first: 1.0.7
-      it-last: 1.0.6
-      merge-options: 3.0.4
-      multiaddr: 10.0.1_node-fetch@3.2.3
-      multiformats: 9.6.4
-      native-abort-controller: 1.0.4_abort-controller@3.0.0
-      parse-duration: 1.0.2
-      stream-to-it: 0.2.4
       uint8arrays: 3.0.0
     transitivePeerDependencies:
       - node-fetch
@@ -2014,6 +2012,18 @@ packages:
       is-plain-obj: 2.1.0
     dev: false
 
+  /mime-db/1.52.0:
+    resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /mime-types/2.1.35:
+    resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
+    engines: {node: '>= 0.6'}
+    dependencies:
+      mime-db: 1.52.0
+    dev: false
+
   /min-indent/1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
@@ -2201,8 +2211,8 @@ packages:
       node-fetch: 3.2.3
     dev: false
 
-  /nft.storage/6.0.2_node-fetch@3.2.3:
-    resolution: {integrity: sha512-TaycdqD2DabEZ0mSNdcTeO2D3FKMlbIukXpihncMb8BL805sieOWt2tZBZmlUgHMxtDZIeWpiQOIr7YjhuMI0Q==}
+  /nft.storage/6.1.0_node-fetch@3.2.3:
+    resolution: {integrity: sha512-7qK9ZRAIWu7Z4dsdYHHL2TkzMIhijxaH37eK8CzP1JmM/wFX3lwTyGHywlGPmWL8pq7OhS8FgMJlmSyMbAVWYA==}
     dependencies:
       '@ipld/car': 3.2.4
       '@ipld/dag-cbor': 6.0.15

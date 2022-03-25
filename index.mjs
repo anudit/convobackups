@@ -8,8 +8,10 @@ import { MongoClient } from 'mongodb';
 import { prettyDate, bfjStringify, saveToFile } from './utils.mjs';
 import { storeOnNftStorage } from './adaptors/nftstorage.mjs';
 import { pinToInfura } from './adaptors/infura.mjs';
+import { pinToPinata } from './adaptors/pinata.mjs';
+import { storeOnChainsafeStorage } from './adaptors/chainsafe.mjs';
 
-const { CHAINSAFE_STORAGE_API_KEY, TEXTILE_PK, TEXTILE_HUB_KEY_DEV, MONGODB_URI, TEXTILE_THREADID, NFTSTORAGE_KEY, PINATA_API_KEY, PINATA_API_SECRET, REDIS_CONNECTION} = process.env;
+const { TEXTILE_PK, TEXTILE_HUB_KEY_DEV, MONGODB_URI, TEXTILE_THREADID, NFTSTORAGE_KEY, PINATA_API_KEY, PINATA_API_SECRET, REDIS_CONNECTION} = process.env;
 
 const getClient = async () =>{
 
@@ -68,23 +70,23 @@ const getData = async () =>{
     const threadId = ThreadID.fromString(TEXTILE_THREADID);
 
     let snapshot_comments = await threadClient.find(threadId, 'comments', {});
-    console.log("🟡 snapshot.comments");
+    console.log("🟢 snapshot.comments");
     let snapshot_threads = await threadClient.find(threadId, 'threads', {});
-    console.log("🟡 snapshot.threads");
+    console.log("🟢 snapshot.threads");
     let snapshot_addressToThreadIds = await threadClient.find(threadId, 'addressToThreadIds', {});
-    console.log("🟡 snapshot.addressToThreadIds");
-    let snapshot_cachedTrustScores = await getAllTrustScoreData();
-    console.log("🟡 snapshot.cachedTrustScores");
+    // console.log("🟡 snapshot.addressToThreadIds");
+    // let snapshot_cachedTrustScores = await getAllTrustScoreData();
+    console.log("🟢 snapshot.cachedTrustScores");
     let snapshot_bridge = await threadClient.find(threadId, 'bridge', {});
-    console.log("🟡 snapshot.bridge");
+    console.log("🟢 snapshot.bridge");
     let redis_data = await getRedisData();
-    console.log("🟡 snapshot.redis_data");
+    console.log("🟢 snapshot.redis_data");
 
     return {
         snapshot_comments,
         snapshot_threads,
         snapshot_addressToThreadIds,
-        snapshot_cachedTrustScores,
+        // snapshot_cachedTrustScores,
         snapshot_bridge,
         redis_data
     };
@@ -99,14 +101,17 @@ async function runPipeline(){
     let stringified = await bfjStringify(data);
     let fn = `${prettyDate()}.json`;
     let storeRes = await saveToFile(fn, stringified);
+    console.log(storeRes)
 
     if (storeRes.success === true) {
         let nftStorageResp = await storeOnNftStorage(stringified);
         if (nftStorageResp.slice(0, 3) === 'baf'){
-            console.log('🟢 NFT.Storage Backup Successful');
-
+            console.log('🟢 NFT.Storage Backup Successful', nftStorageResp);
             await pinToInfura(nftStorageResp);
+            await pinToPinata(nftStorageResp);
         }
+
+        await storeOnChainsafeStorage(fn, storeRes.path);
     }
     else {
         console.error('File Storage Error', storeRes?.error);
