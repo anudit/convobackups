@@ -101,12 +101,11 @@ async function runPipeline(){
     let stringified = await bfjStringify(data);
     let fn = `${prettyDate()}.json`;
     let storeRes = await saveToFile(fn, stringified);
-    console.log(storeRes)
 
     if (storeRes.success === true) {
         let nftStorageResp = await storeOnNftStorage(stringified);
         if (nftStorageResp.slice(0, 3) === 'baf'){
-            console.log('🟢 NFT.Storage Backup Successful', nftStorageResp);
+            console.log('🟢 NFT.Storage Backup Successful');
             await pinToInfura(nftStorageResp);
             await pinToPinata(nftStorageResp);
         }
