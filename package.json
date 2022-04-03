@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/anudit/convobackups#readme",
   "dependencies": {
+    "@fleekhq/fleek-storage-js": "^1.0.21",
     "@textile/hub": "^6.3.3",
     "bfj": "^7.0.2",
     "dotenv": "^16.0.0",
