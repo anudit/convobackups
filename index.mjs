@@ -121,4 +121,4 @@ async function runPipeline(){
     process.exit(0);
 }
 
-// runPipeline();
+runPipeline();
