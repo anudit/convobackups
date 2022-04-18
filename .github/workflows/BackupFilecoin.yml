@@ -42,4 +42,6 @@ jobs:
         REDIS_CONNECTION: ${{ secrets.REDIS_CONNECTION }}
         MONGODB_URI: ${{ secrets.MONGODB_URI }}
         CHAINSAFE_STORAGE_API_KEY: ${{ secrets.CHAINSAFE_STORAGE_API_KEY }}
+        FLEEK_STORAGE_API_KEY: ${{ secrets.FLEEK_STORAGE_API_KEY }}
+        FLEEK_STORAGE_API_SECRET: ${{ secrets.FLEEK_STORAGE_API_SECRET }}
       run: pnpm backup
