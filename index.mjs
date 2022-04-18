@@ -75,9 +75,9 @@ const getData = async () =>{
     let snapshot_threads = await threadClient.find(threadId, 'threads', {});
     console.log("🟢 snapshot.threads");
     let snapshot_addressToThreadIds = await threadClient.find(threadId, 'addressToThreadIds', {});
-    // console.log("🟡 snapshot.addressToThreadIds");
+    console.log("🟢 snapshot.addressToThreadIds");
     // let snapshot_cachedTrustScores = await getAllTrustScoreData();
-    console.log("🟢 snapshot.cachedTrustScores");
+    // console.log("🟢 snapshot.cachedTrustScores");
     let snapshot_bridge = await threadClient.find(threadId, 'bridge', {});
     console.log("🟢 snapshot.bridge");
     let redis_data = await getRedisData();
@@ -112,7 +112,7 @@ async function runPipeline(){
         }
 
         await storeOnChainsafeStorage(fn, storeRes.path);
-        await storeOnFleekStorage(fn, storeRes.path);
+        // await storeOnFleekStorage(fn, storeRes.path);
     }
     else {
         console.error('File Storage Error', storeRes?.error);

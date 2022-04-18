@@ -1,11 +1,8 @@
+import fs from 'fs';
 import dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 import fleekStorage from '@fleekhq/fleek-storage-js'
 const { FLEEK_STORAGE_API_KEY, FLEEK_STORAGE_API_SECRET } = process.env;
-
-import fs from 'fs'
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-
 
 export async function storeOnFleekStorage( fn, path ){
 
@@ -19,7 +16,7 @@ export async function storeOnFleekStorage( fn, path ){
             apiKey: FLEEK_STORAGE_API_KEY,
             apiSecret: FLEEK_STORAGE_API_SECRET,
             key: title,
-            stream: file,
+            stream: file
         });
 
         console.log(uploadedFile);
