@@ -44,6 +44,6 @@ jobs:
         CHAINSAFE_STORAGE_API_KEY: ${{ secrets.CHAINSAFE_STORAGE_API_KEY }}
         FLEEK_STORAGE_API_KEY: ${{ secrets.FLEEK_STORAGE_API_KEY }}
         FLEEK_STORAGE_API_SECRET: ${{ secrets.FLEEK_STORAGE_API_SECRET }}
-         FILEBASE_API_KEY: ${{ secrets.FILEBASE_API_KEY }}
+        FILEBASE_API_KEY: ${{ secrets.FILEBASE_API_KEY }}
         FILEBASE_API_SECRET: ${{ secrets.FILEBASE_API_SECRET }}
       run: pnpm backup
