@@ -22,7 +22,7 @@ export async function storeOnFleekStorage( fn, path ){
         console.log(uploadedFile);
 
         if ('hash' in json){
-            console.log('🟢 Backup to Fleek Storage Sucessful');
+            console.log('🟢 Backup to Fleek Storage Successful');
         }
         else {
             console.log('🔴 Backup to Fleek Storage Failed')

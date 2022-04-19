@@ -19,6 +19,7 @@
   "dependencies": {
     "@fleekhq/fleek-storage-js": "^1.0.21",
     "@textile/hub": "^6.3.3",
+    "aws-sdk": "^2.1116.0",
     "bfj": "^7.0.2",
     "dotenv": "^16.0.0",
     "ethers": "^5.6.4",

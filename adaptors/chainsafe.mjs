@@ -33,7 +33,7 @@ export async function storeOnChainsafeStorage( fn, path ){
         let json = await resp.json();
 
         if ('path' in json){
-            console.log('🟢 Backup to Chainsafe Sucessful');
+            console.log('🟢 Backup to Chainsafe Successful');
         }
         else {
             console.log('🔴 Backup to Chainsafe Failed')

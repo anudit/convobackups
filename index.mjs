@@ -11,6 +11,7 @@ import { pinToInfura } from './adaptors/infura.mjs';
 import { pinToPinata } from './adaptors/pinata.mjs';
 import { storeOnChainsafeStorage } from './adaptors/chainsafe.mjs';
 import { storeOnFleekStorage } from './adaptors/fleekstorage.mjs';
+import { storeOnFilebase } from './adaptors/filebase.mjs';
 
 const { TEXTILE_PK, TEXTILE_HUB_KEY_DEV, MONGODB_URI, TEXTILE_THREADID, NFTSTORAGE_KEY, PINATA_API_KEY, PINATA_API_SECRET, REDIS_CONNECTION} = process.env;
 
@@ -112,6 +113,7 @@ async function runPipeline(){
         }
 
         await storeOnChainsafeStorage(fn, storeRes.path);
+        await storeOnFilebase(fn, storeRes.path);
         // await storeOnFleekStorage(fn, storeRes.path);
     }
     else {
@@ -122,3 +124,4 @@ async function runPipeline(){
 }
 
 runPipeline();
+
