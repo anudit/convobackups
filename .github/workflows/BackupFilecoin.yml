@@ -46,4 +46,5 @@ jobs:
         FLEEK_STORAGE_API_SECRET: ${{ secrets.FLEEK_STORAGE_API_SECRET }}
         FILEBASE_API_KEY: ${{ secrets.FILEBASE_API_KEY }}
         FILEBASE_API_SECRET: ${{ secrets.FILEBASE_API_SECRET }}
+        WEB3_STORAGE_API_KEY: ${{ secrets.WEB3_STORAGE_API_KEY }}
       run: pnpm backup

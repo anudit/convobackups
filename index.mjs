@@ -12,6 +12,7 @@ import { pinToPinata } from './adaptors/pinata.mjs';
 import { storeOnChainsafeStorage } from './adaptors/chainsafe.mjs';
 import { storeOnFleekStorage } from './adaptors/fleekstorage.mjs';
 import { storeOnFilebase } from './adaptors/filebase.mjs';
+import { storeOnWeb3Storage } from './adaptors/web3storage.mjs';
 
 const { TEXTILE_PK, TEXTILE_HUB_KEY_DEV, MONGODB_URI, TEXTILE_THREADID, NFTSTORAGE_KEY, PINATA_API_KEY, PINATA_API_SECRET, REDIS_CONNECTION} = process.env;
 
@@ -60,7 +61,7 @@ const getAllTrustScoreData = async () => {
     const client = await MongoClient.connect(MONGODB_URI);
     let db = client.db('convo');
     let coll = db.collection('cachedTrustScores');
-    // TODO: stream the data for mongdb and possibly strinfy on the fly.
+    // TODO: stream the data for mongdb and possibly stringify on the fly.
     let completeData = await coll.find().toArray();
 
     return completeData;
@@ -114,6 +115,7 @@ async function runPipeline(){
 
         await storeOnChainsafeStorage(fn, storeRes.path);
         await storeOnFilebase(fn, storeRes.path);
+        await storeOnWeb3Storage(fn, stringified);
         // await storeOnFleekStorage(fn, storeRes.path);
     }
     else {
@@ -124,4 +126,3 @@ async function runPipeline(){
 }
 
 runPipeline();
-
