@@ -32,7 +32,7 @@ export async function storeOnChainsafeStorage( fn, path ){
         let resp = await fetch("https://api.chainsafe.io/api/v1/bucket/ad2c9217-bf2a-4e13-a8b6-85bd375aada2/upload", requestOptions);
         let json = await resp.json();
 
-        if ('path' in json){
+        if (Object.keys(json).includes('path') == true){
             console.log('🟢 Backup to Chainsafe Successful');
         }
         else {

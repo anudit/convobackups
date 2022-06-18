@@ -11,21 +11,21 @@ jobs:
     name: Backup to Filecoin
     steps:
     - name: checkout
-      uses: actions/checkout@v2.3.4
-    - uses: actions/setup-node@v2
+      uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: 16
 
     - name: Cache pnpm modules
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.pnpm-store
         key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.os }}-
-    - uses: pnpm/action-setup@v2.1.0
+    - uses: pnpm/action-setup@v2
       with:
-        version: 6.0.2
+        version: latest
     - name: Install Dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: pnpm install
@@ -47,4 +47,5 @@ jobs:
         FILEBASE_API_KEY: ${{ secrets.FILEBASE_API_KEY }}
         FILEBASE_API_SECRET: ${{ secrets.FILEBASE_API_SECRET }}
         WEB3_STORAGE_API_KEY: ${{ secrets.WEB3_STORAGE_API_KEY }}
+        MORALIS_MASTER_KEY: ${{ secrets.MORALIS_MASTER_KEY }}
       run: pnpm backup

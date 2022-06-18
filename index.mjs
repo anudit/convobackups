@@ -13,6 +13,7 @@ import { storeOnChainsafeStorage } from './adaptors/chainsafe.mjs';
 import { storeOnFleekStorage } from './adaptors/fleekstorage.mjs';
 import { storeOnFilebase } from './adaptors/filebase.mjs';
 import { storeOnWeb3Storage } from './adaptors/web3storage.mjs';
+import { storeOnMoralis } from './adaptors/moralis.mjs';
 
 const { TEXTILE_PK, TEXTILE_HUB_KEY_DEV, MONGODB_URI, TEXTILE_THREADID, NFTSTORAGE_KEY, PINATA_API_KEY, PINATA_API_SECRET, REDIS_CONNECTION} = process.env;
 
@@ -116,6 +117,7 @@ async function runPipeline(){
         await storeOnChainsafeStorage(fn, storeRes.path);
         await storeOnFilebase(fn, storeRes.path);
         await storeOnWeb3Storage(fn, stringified);
+        await storeOnMoralis(fn, stringified);
         // await storeOnFleekStorage(fn, storeRes.path);
     }
     else {
