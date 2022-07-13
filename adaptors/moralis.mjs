@@ -16,6 +16,7 @@ export async function storeOnMoralis( fn, stringified ){
             appId,
             masterKey: MORALIS_MASTER_KEY
         });
+        console.log('🟢 Started Moralis Server');
 
         const buf = Buffer.from(stringified);
 

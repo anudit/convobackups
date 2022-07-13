@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@fleekhq/fleek-storage-js': ^1.0.21
   '@textile/hub': ^6.3.4
-  aws-sdk: ^2.1172.0
+  aws-sdk: ^2.1173.0
   bfj: ^7.0.2
   dotenv: ^16.0.1
   ethers: ^5.6.9
@@ -12,13 +12,13 @@ specifiers:
   mongodb: ^4.7.0
   moralis: ^1.8.1
   nft.storage: ^6.4.0
-  node-fetch: ^3.2.7
+  node-fetch: ^3.2.8
   web3.storage: ^4.3.0
 
 dependencies:
   '@fleekhq/fleek-storage-js': 1.0.21
-  '@textile/hub': 6.3.4_node-fetch@3.2.7
-  aws-sdk: 2.1172.0
+  '@textile/hub': 6.3.4_node-fetch@3.2.8
+  aws-sdk: 2.1173.0
   bfj: 7.0.2
   dotenv: 16.0.1
   ethers: 5.6.9
@@ -26,9 +26,9 @@ dependencies:
   ioredis: 5.2.0
   mongodb: 4.7.0
   moralis: 1.8.1
-  nft.storage: 6.4.0_node-fetch@3.2.7
-  node-fetch: 3.2.7
-  web3.storage: 4.3.0_node-fetch@3.2.7
+  nft.storage: 6.4.0_node-fetch@3.2.8
+  node-fetch: 3.2.8
+  web3.storage: 4.3.0_node-fetch@3.2.8
 
 packages:
 
@@ -704,7 +704,7 @@ packages:
   /@fleekhq/fleek-storage-js/1.0.21:
     resolution: {integrity: sha512-rYika9hURxnLaXYiBxey6sdYD6HtDCr2Z11pfkrqCWeRYdNe2uE7gYSw8ylXvOPX+L/IxAFcwEpjU4b4P9ZB/w==}
     dependencies:
-      aws-sdk: 2.1172.0
+      aws-sdk: 2.1173.0
       axios: 0.21.4
       multiformats: 9.7.0
       s3-streaming-upload: 0.3.4
@@ -848,7 +848,7 @@ packages:
       google-protobuf: 3.20.1
     dev: false
 
-  /@textile/buckets/6.2.4_node-fetch@3.2.7:
+  /@textile/buckets/6.2.4_node-fetch@3.2.8:
     resolution: {integrity: sha512-wyu2PMXUUs4YvDM/dEJiy8+CVM+3dTuqCVm1fBvwyYLTdjislegJjFxpHZMpZQMWK/aQfCdeZ4i3x/UJ8fCq5g==}
     dependencies:
       '@improbable-eng/grpc-web': 0.13.0
@@ -856,11 +856,11 @@ packages:
       '@textile/buckets-grpc': 2.6.18
       '@textile/context': 0.12.2
       '@textile/crypto': 4.2.1
-      '@textile/grpc-authentication': 3.4.5_node-fetch@3.2.7
+      '@textile/grpc-authentication': 3.4.5_node-fetch@3.2.8
       '@textile/grpc-connection': 2.5.4
       '@textile/grpc-transport': 0.5.2
       '@textile/hub-grpc': 2.6.18
-      '@textile/hub-threads-client': 5.5.4_node-fetch@3.2.7
+      '@textile/hub-threads-client': 5.5.4_node-fetch@3.2.8
       '@textile/security': 0.9.1
       '@textile/threads-id': 0.6.1
       abort-controller: 3.0.0
@@ -896,13 +896,13 @@ packages:
       tweetnacl: 1.0.3
     dev: false
 
-  /@textile/grpc-authentication/3.4.5_node-fetch@3.2.7:
+  /@textile/grpc-authentication/3.4.5_node-fetch@3.2.8:
     resolution: {integrity: sha512-6K2SIJxhFUuNeq11pfRKPP70FXHuG6qBdx2jJgKqi0QPnKbyzQQrpS0cVGSPqHf66lq3dmqTTeefmlBGw9l6+w==}
     dependencies:
       '@textile/context': 0.12.2
       '@textile/crypto': 4.2.1
       '@textile/grpc-connection': 2.5.4
-      '@textile/hub-threads-client': 5.5.4_node-fetch@3.2.7
+      '@textile/hub-threads-client': 5.5.4_node-fetch@3.2.8
       '@textile/security': 0.9.1
     transitivePeerDependencies:
       - bufferutil
@@ -946,13 +946,13 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@textile/hub-filecoin/2.2.4_node-fetch@3.2.7:
+  /@textile/hub-filecoin/2.2.4_node-fetch@3.2.8:
     resolution: {integrity: sha512-h3N6jcRkqJemAO5Bcl9c6gTFN9q2vNOdrc/256pTOM6BsPGMMVn8QU97rZ7YSP7XusyxiRu1+NLDzbPxmP2xdA==}
     dependencies:
       '@improbable-eng/grpc-web': 0.12.0
       '@textile/context': 0.12.2
       '@textile/crypto': 4.2.1
-      '@textile/grpc-authentication': 3.4.5_node-fetch@3.2.7
+      '@textile/grpc-authentication': 3.4.5_node-fetch@3.2.8
       '@textile/grpc-connection': 2.5.4
       '@textile/grpc-powergate-client': 2.6.2
       '@textile/hub-grpc': 2.6.18
@@ -975,14 +975,14 @@ packages:
       google-protobuf: 3.20.1
     dev: false
 
-  /@textile/hub-threads-client/5.5.4_node-fetch@3.2.7:
+  /@textile/hub-threads-client/5.5.4_node-fetch@3.2.8:
     resolution: {integrity: sha512-dHgRd4Wsu1ywId2Q88FZWtkbG4iuZms6co0X7/Lld7eDL0YlrVmb8/lHEhhJqCmJq3vTUxVwviHM8kLrEHwvIw==}
     dependencies:
       '@improbable-eng/grpc-web': 0.13.0
       '@textile/context': 0.12.2
       '@textile/hub-grpc': 2.6.18
       '@textile/security': 0.9.1
-      '@textile/threads-client': 2.3.4_node-fetch@3.2.7
+      '@textile/threads-client': 2.3.4_node-fetch@3.2.8
       '@textile/threads-id': 0.6.1
       '@textile/users-grpc': 2.6.18
       loglevel: 1.8.0
@@ -994,18 +994,18 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@textile/hub/6.3.4_node-fetch@3.2.7:
+  /@textile/hub/6.3.4_node-fetch@3.2.8:
     resolution: {integrity: sha512-/F+rfE+zPg3cLwX7/KuHAZrm9Tt0S++wgc1jiipb7NViGeZhRz1p6JHcEy3+g+MDvyMTSITO6phKmtUMHKItKg==}
     dependencies:
-      '@textile/buckets': 6.2.4_node-fetch@3.2.7
+      '@textile/buckets': 6.2.4_node-fetch@3.2.8
       '@textile/crypto': 4.2.1
-      '@textile/grpc-authentication': 3.4.5_node-fetch@3.2.7
-      '@textile/hub-filecoin': 2.2.4_node-fetch@3.2.7
+      '@textile/grpc-authentication': 3.4.5_node-fetch@3.2.8
+      '@textile/hub-filecoin': 2.2.4_node-fetch@3.2.8
       '@textile/hub-grpc': 2.6.18
-      '@textile/hub-threads-client': 5.5.4_node-fetch@3.2.7
+      '@textile/hub-threads-client': 5.5.4_node-fetch@3.2.8
       '@textile/security': 0.9.1
       '@textile/threads-id': 0.6.1
-      '@textile/users': 6.2.4_node-fetch@3.2.7
+      '@textile/users': 6.2.4_node-fetch@3.2.8
       loglevel: 1.8.0
       multihashes: 3.1.2
     transitivePeerDependencies:
@@ -1016,11 +1016,11 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@textile/multiaddr/0.6.1_node-fetch@3.2.7:
+  /@textile/multiaddr/0.6.1_node-fetch@3.2.8:
     resolution: {integrity: sha512-OQK/kXYhtUA8yN41xltCxCiCO98Pkk8yMgUdhPDAhogvptvX4k9g6Rg0Yob18uBwN58AYUg075V//SWSK1kUCQ==}
     dependencies:
       '@textile/threads-id': 0.6.1
-      multiaddr: 8.1.2_node-fetch@3.2.7
+      multiaddr: 8.1.2_node-fetch@3.2.8
       varint: 6.0.0
     transitivePeerDependencies:
       - node-fetch
@@ -1044,14 +1044,14 @@ packages:
       google-protobuf: 3.20.1
     dev: false
 
-  /@textile/threads-client/2.3.4_node-fetch@3.2.7:
+  /@textile/threads-client/2.3.4_node-fetch@3.2.8:
     resolution: {integrity: sha512-y89bpIuGDzkPqNpwGBu9Ky20g/IAEj0H62RDx7k4q66FsKJ2aSV+Jp7a4l0J+nxnqOpwUwennndlynmKzmTnnw==}
     dependencies:
       '@improbable-eng/grpc-web': 0.13.0
       '@textile/context': 0.12.2
       '@textile/crypto': 4.2.1
       '@textile/grpc-transport': 0.5.2
-      '@textile/multiaddr': 0.6.1_node-fetch@3.2.7
+      '@textile/multiaddr': 0.6.1_node-fetch@3.2.8
       '@textile/security': 0.9.1
       '@textile/threads-client-grpc': 1.1.5
       '@textile/threads-id': 0.6.1
@@ -1082,18 +1082,18 @@ packages:
       google-protobuf: 3.20.1
     dev: false
 
-  /@textile/users/6.2.4_node-fetch@3.2.7:
+  /@textile/users/6.2.4_node-fetch@3.2.8:
     resolution: {integrity: sha512-NnCoRgVlQV14JatsSWe1k3ffPzLWSzkSwGJQjKwYJy8Cs1WRkwGDMddYJmg2B1P5rrZj/Zbu4krlEGVvFELncg==}
     dependencies:
       '@improbable-eng/grpc-web': 0.13.0
       '@textile/buckets-grpc': 2.6.18
       '@textile/context': 0.12.2
       '@textile/crypto': 4.2.1
-      '@textile/grpc-authentication': 3.4.5_node-fetch@3.2.7
+      '@textile/grpc-authentication': 3.4.5_node-fetch@3.2.8
       '@textile/grpc-connection': 2.5.4
       '@textile/grpc-transport': 0.5.2
       '@textile/hub-grpc': 2.6.18
-      '@textile/hub-threads-client': 5.5.4_node-fetch@3.2.7
+      '@textile/hub-threads-client': 5.5.4_node-fetch@3.2.8
       '@textile/security': 0.9.1
       '@textile/threads-id': 0.6.1
       '@textile/users-grpc': 2.6.18
@@ -1260,8 +1260,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /aws-sdk/2.1172.0:
-    resolution: {integrity: sha512-B3NXD1ZLfwj8oDavb3GTUkDvCioWbRrf01nNkPvdTpoMBQCGw4elTuvG7ZQ114v5V2XWMxpu+SKMkcxALHEd6Q==}
+  /aws-sdk/2.1173.0:
+    resolution: {integrity: sha512-RR5OENCE5N7J9sp6Are+8WacIa4sGgeVi3K0wezV97nDTHXJD82hSiaRCCN/xGfnB/GcWtPIBCetRD2tpiCN2w==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       buffer: 4.9.2
@@ -1553,11 +1553,11 @@ packages:
     engines: {node: '>=0.10'}
     dev: false
 
-  /dns-over-http-resolver/1.2.3_node-fetch@3.2.7:
+  /dns-over-http-resolver/1.2.3_node-fetch@3.2.8:
     resolution: {integrity: sha512-miDiVSI6KSNbi4SVifzO/reD8rMnxgrlnkrlkugOLQpWQTe2qMdHsZp5DmfKjxNE+/T3VAAYLQUZMv9SMr6+AA==}
     dependencies:
       debug: 4.3.4
-      native-fetch: 3.0.0_node-fetch@3.2.7
+      native-fetch: 3.0.0_node-fetch@3.2.8
       receptacle: 1.3.2
     transitivePeerDependencies:
       - node-fetch
@@ -2033,7 +2033,7 @@ packages:
     resolution: {integrity: sha512-PuExPYUiu6qMBQb4l06ecm6T6ujzhmh+MeJcW9wa89PoAz5pvd4zPgN5WJV104mb6S2T1AwNIAaB70JNrLQWhg==}
     dev: false
 
-  /ipfs-car/0.6.2_node-fetch@3.2.7:
+  /ipfs-car/0.6.2_node-fetch@3.2.8:
     resolution: {integrity: sha512-tliuakkKKtCa4TTnFT3zJKjq/aD8EGKX8Y0ybCyrAW0fo/n2koZpxiLjBvtTs47Rqyji6ggXo+atPbJJ60hJmg==}
     hasBin: true
     dependencies:
@@ -2044,8 +2044,8 @@ packages:
       browser-readablestream-to-it: 1.0.3
       idb-keyval: 6.2.0
       interface-blockstore: 2.0.3
-      ipfs-core-types: 0.8.4_node-fetch@3.2.7
-      ipfs-core-utils: 0.12.2_node-fetch@3.2.7
+      ipfs-core-types: 0.8.4_node-fetch@3.2.8
+      ipfs-core-utils: 0.12.2_node-fetch@3.2.8
       ipfs-unixfs-exporter: 7.0.11
       ipfs-unixfs-importer: 9.0.10
       ipfs-utils: 9.0.7
@@ -2064,7 +2064,7 @@ packages:
       - supports-color
     dev: false
 
-  /ipfs-car/0.7.0_node-fetch@3.2.7:
+  /ipfs-car/0.7.0_node-fetch@3.2.8:
     resolution: {integrity: sha512-9ser6WWZ1ZMTCGbcVkRXUzOrpQ4SIiLfzIEnk+3LQsXbV09yeZg3ijhRuEXozEIYE68Go9JmOFshamsK9iKlNQ==}
     hasBin: true
     dependencies:
@@ -2075,8 +2075,8 @@ packages:
       browser-readablestream-to-it: 1.0.3
       idb-keyval: 6.2.0
       interface-blockstore: 2.0.3
-      ipfs-core-types: 0.8.4_node-fetch@3.2.7
-      ipfs-core-utils: 0.12.2_node-fetch@3.2.7
+      ipfs-core-types: 0.8.4_node-fetch@3.2.8
+      ipfs-core-utils: 0.12.2_node-fetch@3.2.8
       ipfs-unixfs-exporter: 7.0.11
       ipfs-unixfs-importer: 9.0.10
       ipfs-utils: 9.0.7
@@ -2095,18 +2095,18 @@ packages:
       - supports-color
     dev: false
 
-  /ipfs-core-types/0.8.4_node-fetch@3.2.7:
+  /ipfs-core-types/0.8.4_node-fetch@3.2.8:
     resolution: {integrity: sha512-sbRZA1QX3xJ6ywTiVQZMOxhlhp4osAZX2SXx3azOLxAtxmGWDMkHYt722VV4nZ2GyJy8qyk5GHQIZ0uvQnpaTg==}
     dependencies:
       interface-datastore: 6.1.1
-      multiaddr: 10.0.1_node-fetch@3.2.7
+      multiaddr: 10.0.1_node-fetch@3.2.8
       multiformats: 9.7.0
     transitivePeerDependencies:
       - node-fetch
       - supports-color
     dev: false
 
-  /ipfs-core-utils/0.12.2_node-fetch@3.2.7:
+  /ipfs-core-utils/0.12.2_node-fetch@3.2.8:
     resolution: {integrity: sha512-RfxP3rPhXuqKIUmTAUhmee6fmaV3A7LMnjOUikRKpSyqESz/DR7aGK7tbttMxkZdkSEr0rFXlqbyb0vVwmn0wQ==}
     dependencies:
       any-signal: 2.1.2
@@ -2114,7 +2114,7 @@ packages:
       browser-readablestream-to-it: 1.0.3
       debug: 4.3.4
       err-code: 3.0.1
-      ipfs-core-types: 0.8.4_node-fetch@3.2.7
+      ipfs-core-types: 0.8.4_node-fetch@3.2.8
       ipfs-unixfs: 6.0.9
       ipfs-utils: 9.0.7
       it-all: 1.0.6
@@ -2122,8 +2122,8 @@ packages:
       it-peekable: 1.0.3
       it-to-stream: 1.0.0
       merge-options: 3.0.4
-      multiaddr: 10.0.1_node-fetch@3.2.7
-      multiaddr-to-uri: 8.0.0_node-fetch@3.2.7
+      multiaddr: 10.0.1_node-fetch@3.2.8
+      multiaddr-to-uri: 8.0.0_node-fetch@3.2.8
       multiformats: 9.7.0
       nanoid: 3.3.4
       parse-duration: 1.0.2
@@ -2677,19 +2677,19 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: false
 
-  /multiaddr-to-uri/8.0.0_node-fetch@3.2.7:
+  /multiaddr-to-uri/8.0.0_node-fetch@3.2.8:
     resolution: {integrity: sha512-dq4p/vsOOUdVEd1J1gl+R2GFrXJQH8yjLtz4hodqdVbieg39LvBOdMQRdQnfbg5LSM/q1BYNVf5CBbwZFFqBgA==}
     dependencies:
-      multiaddr: 10.0.1_node-fetch@3.2.7
+      multiaddr: 10.0.1_node-fetch@3.2.8
     transitivePeerDependencies:
       - node-fetch
       - supports-color
     dev: false
 
-  /multiaddr/10.0.1_node-fetch@3.2.7:
+  /multiaddr/10.0.1_node-fetch@3.2.8:
     resolution: {integrity: sha512-G5upNcGzEGuTHkzxezPrrD6CaIHR9uo+7MwqhNVcXTs33IInon4y7nMiGxl2CY5hG7chvYQUQhz5V52/Qe3cbg==}
     dependencies:
-      dns-over-http-resolver: 1.2.3_node-fetch@3.2.7
+      dns-over-http-resolver: 1.2.3_node-fetch@3.2.8
       err-code: 3.0.1
       is-ip: 3.1.0
       multiformats: 9.7.0
@@ -2700,12 +2700,12 @@ packages:
       - supports-color
     dev: false
 
-  /multiaddr/8.1.2_node-fetch@3.2.7:
+  /multiaddr/8.1.2_node-fetch@3.2.8:
     resolution: {integrity: sha512-r13IzW8+Sv9zab9Gt8RPMIN2WkptIPq99EpAzg4IbJ/zTELhiEwXWr9bAmEatSCI4j/LSA6ESJzvz95JZ+ZYXQ==}
     dependencies:
       cids: 1.1.9
       class-is: 1.1.0
-      dns-over-http-resolver: 1.2.3_node-fetch@3.2.7
+      dns-over-http-resolver: 1.2.3_node-fetch@3.2.8
       err-code: 2.0.3
       is-ip: 3.1.0
       multibase: 3.1.2
@@ -2790,15 +2790,15 @@ packages:
       node-fetch: /@achingbrain/node-fetch/2.6.7
     dev: false
 
-  /native-fetch/3.0.0_node-fetch@3.2.7:
+  /native-fetch/3.0.0_node-fetch@3.2.8:
     resolution: {integrity: sha512-G3Z7vx0IFb/FQ4JxvtqGABsOTIqRWvgQz6e+erkB+JJD6LrszQtMozEHI4EkmgZQvnGHrpLVzUWk7t4sJCIkVw==}
     peerDependencies:
       node-fetch: '*'
     dependencies:
-      node-fetch: 3.2.7
+      node-fetch: 3.2.8
     dev: false
 
-  /nft.storage/6.4.0_node-fetch@3.2.7:
+  /nft.storage/6.4.0_node-fetch@3.2.8:
     resolution: {integrity: sha512-b5kgIi9xk+euZpiTzhaDzJey12bOCcOW74ipK5Zwczhgkm3sTFa4F1Bp2XYNqUtPQMXc6DO2v0r3NZ4ctl3iCg==}
     dependencies:
       '@ipld/car': 3.2.4
@@ -2808,7 +2808,7 @@ packages:
       '@web-std/file': 3.0.2
       '@web-std/form-data': 3.0.2
       carbites: 1.0.6
-      ipfs-car: 0.6.2_node-fetch@3.2.7
+      ipfs-car: 0.6.2_node-fetch@3.2.8
       multiformats: 9.7.0
       p-retry: 4.6.2
       streaming-iterables: 6.2.0
@@ -2836,8 +2836,8 @@ packages:
       whatwg-url: 5.0.0
     dev: false
 
-  /node-fetch/3.2.7:
-    resolution: {integrity: sha512-xRYIBUEoMvzvLt0FT2mAKAGXps1Wm0GpswR63pPJC4Hp5EubeigGYJJge34f3mPApap4+2B3sTKyUygsZrkmyg==}
+  /node-fetch/3.2.8:
+    resolution: {integrity: sha512-KtpD1YhGszhntMpBDyp5lyagk8KIMopC1LEb7cQUAh7zcosaX5uK8HnbNb2i3NTQK3sIawCItS0uFC3QzcLHdg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
@@ -3121,7 +3121,7 @@ packages:
     resolution: {integrity: sha512-mm/OPbV5rUpjGtRFMhFBH158gjguwVgM4/81UcxDGF8jU1uhopjvsQJRt0hvmLqYBqNR6LsP9fdb0ZHkJrwztw==}
     engines: {node: '>= 12.13.0'}
     dependencies:
-      aws-sdk: 2.1172.0
+      aws-sdk: 2.1173.0
       readable-stream: 3.6.0
     dev: false
 
@@ -3435,7 +3435,7 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
-  /web3.storage/4.3.0_node-fetch@3.2.7:
+  /web3.storage/4.3.0_node-fetch@3.2.8:
     resolution: {integrity: sha512-9IKn+4dyF7cMXC9etVzW3qmCV/6sL+Za4kcUUn7D3qRt4s1DrKUGJdAe9VvYcpHwbnnYoKNBu06lGO++daDo8w==}
     dependencies:
       '@ipld/car': 3.2.4
@@ -3447,7 +3447,7 @@ packages:
       carbites: 1.0.6
       cborg: 1.9.4
       files-from-path: 0.2.6
-      ipfs-car: 0.7.0_node-fetch@3.2.7
+      ipfs-car: 0.7.0_node-fetch@3.2.8
       ipns: 0.16.0
       libp2p-crypto: 0.21.2
       p-retry: 4.6.2
