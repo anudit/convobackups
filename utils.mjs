@@ -40,7 +40,7 @@ export async function saveToFile(fileName, data){
                 console.error(err)
                 rej({
                     success: false,
-                    error
+                    error: err,
                 })
             }
             else {
