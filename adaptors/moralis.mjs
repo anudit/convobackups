@@ -1,20 +1,18 @@
 import dotenv from 'dotenv'
 dotenv.config({ path: '.env.local' });
-const { MORALIS_MASTER_KEY } = process.env;
-import Moralis from "moralis/node.js";
+const { MORALIS_API_KEY } = process.env;
+import Moralis from "moralis";
 
 export async function storeOnMoralis( fn, stringified ){
 
     try {
         console.log("🔃 Backing up data to Moralis");
 
-        const serverUrl = `https://godepqpv7rsn.usemoralis.com:2053/server`;
-        const appId = "5lhtN6Bgtei5n6gRox7WCgBA6N4cnDkgjhkLAONr";
+        const serverUrl = `https://qintlf1wodcu.usemoralis.com:2053/server`;
+        const appId = "dYW4M2NnUD6sfmo3KoLOPoGhRtBdF33gIU8f2ZOH";
 
         await Moralis.start({
-            serverUrl,
-            appId,
-            masterKey: MORALIS_MASTER_KEY
+            apiKey: MORALIS_API_KEY
         });
         console.log('🟢 Started Moralis Server');
 

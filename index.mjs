@@ -117,7 +117,7 @@ async function runPipeline(){
         await storeOnChainsafeStorage(fn, storeRes.path);
         await storeOnFilebase(fn, storeRes.path);
         await storeOnWeb3Storage(fn, stringified);
-        await storeOnMoralis(fn, stringified);
+        // await storeOnMoralis(fn, stringified);
         // await storeOnFleekStorage(fn, storeRes.path);
     }
     else {
