@@ -46,7 +46,6 @@ export async function storeOnFilebase( fn, path ){
 
         // convosia, convoipfs1
         let resp = await putOnFilebase('convosia', fn, file);
-            console.log(resp);
 
         if ('Location' in resp){
             console.log('🟢 Backup to Filebase-Sia Successful');
