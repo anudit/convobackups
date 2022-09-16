@@ -44,31 +44,20 @@ export async function storeOnFilebase( fn, path ){
 
         const file = fs.createReadStream(path);
 
+        // convosia, convoipfs1
+        let resp = await putOnFilebase('convosia', fn, file);
+            console.log(resp);
 
-        let resp2 = await putOnFilebase('convostorj1', fn, file);
-
-        if ('Location' in resp2){
-            console.log('🟢 Backup to Filebase-Storj Successful');
+        if ('Location' in resp){
+            console.log('🟢 Backup to Filebase-Sia Successful');
         }
         else {
-            console.log('🔴 Backup to Filebase-Storj Failed')
-            console.log(resp2);
+            console.log('🔴 Backup to Filebase-Sia Failed')
+            console.log(resp);
         }
 
 
-        // let resp = await putOnFilebase('convoipfs1', fn, file);
-        //     console.log(resp);
-
-        // if ('Location' in resp){
-        //     console.log('🟢 Backup to Filebase-IPFS Successful');
-        // }
-        // else {
-        //     console.log('🔴 Backup to Filebase-IPFS Failed')
-        //     console.log(resp);
-        // }
-
-
-        return resp2;
+        return resp;
 
     } catch (error) {
         console.log('🔴 Filebase Backup Error', error);

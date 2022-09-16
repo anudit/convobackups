@@ -6,14 +6,12 @@ const { PINATA_API_KEY, PINATA_API_SECRET } = process.env;
 // Gateway : https://gateway.pinata.cloud/ipfs/<hash>
 export async function pinToPinata(hash) {
 
-    try {
+    // try {
 
-
-
-    } catch (error) {
-        console.log('pinToPinata.error', error);
-        return false;
-    }
+    // } catch (error) {
+    //     console.log('pinToPinata.error', error);
+    //     return false;
+    // }
 
     const pinlist = await fetch(`https://api.pinata.cloud/data/pinList?status=pinned&pageLimit=1000`, {
         method: 'GET',

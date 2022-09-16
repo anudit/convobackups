@@ -29,7 +29,7 @@ export async function storeOnChainsafeStorage( fn, path ){
             redirect: 'follow'
         };
 
-        let resp = await fetch("https://api.chainsafe.io/api/v1/bucket/ad2c9217-bf2a-4e13-a8b6-85bd375aada2/upload", requestOptions);
+        let resp = await fetch("https://api.chainsafe.io/api/v1/bucket/4b8ef0f3-5596-4940-a03c-32b14ba31578/upload", requestOptions);
         let json = await resp.json();
 
         if (Object.keys(json).includes('path') == true){

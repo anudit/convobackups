@@ -7,7 +7,6 @@ import { MongoClient } from 'mongodb';
 
 import { prettyDate, bfjStringify, saveToFile } from './utils.mjs';
 import { storeOnNftStorage } from './adaptors/nftstorage.mjs';
-import { pinToInfura } from './adaptors/infura.mjs';
 import { pinToPinata } from './adaptors/pinata.mjs';
 import { storeOnChainsafeStorage } from './adaptors/chainsafe.mjs';
 import { storeOnFleekStorage } from './adaptors/fleekstorage.mjs';
@@ -110,7 +109,6 @@ async function runPipeline(){
         let nftStorageResp = await storeOnNftStorage(stringified);
         if (nftStorageResp.slice(0, 3) === 'baf'){
             console.log('🟢 NFT.Storage Backup Successful');
-            await pinToInfura(nftStorageResp);
             await pinToPinata(nftStorageResp);
         }
 
