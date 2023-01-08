@@ -123,7 +123,4 @@ async function runPipeline(){
     process.exit(0);
 }
 
-// runPipeline();
-
-
-storeOnFleekStorage('8-Jan-2023-20-15.json', "F:\\Users\\anudit\\Documents\\Github\\convobackups\\8-Jan-2023-20-15.json");
+runPipeline();
