@@ -12,7 +12,6 @@ import { storeOnChainsafeStorage } from './adaptors/chainsafe.mjs';
 import { storeOnFleekStorage } from './adaptors/fleekstorage.mjs';
 import { storeOnFilebase } from './adaptors/filebase.mjs';
 import { storeOnWeb3Storage } from './adaptors/web3storage.mjs';
-import { storeOnMoralis } from './adaptors/moralis.mjs';
 
 const { TEXTILE_PK, TEXTILE_HUB_KEY_DEV, MONGODB_URI, TEXTILE_THREADID, NFTSTORAGE_KEY, PINATA_API_KEY, PINATA_API_SECRET, REDIS_CONNECTION} = process.env;
 
@@ -115,8 +114,7 @@ async function runPipeline(){
         await storeOnChainsafeStorage(fn, storeRes.path);
         await storeOnFilebase(fn, storeRes.path);
         await storeOnWeb3Storage(fn, stringified);
-        // await storeOnMoralis(fn, stringified);
-        // await storeOnFleekStorage(fn, storeRes.path);
+        await storeOnFleekStorage(fn, storeRes.path);
     }
     else {
         console.error('File Storage Error', storeRes?.error);
@@ -125,4 +123,7 @@ async function runPipeline(){
     process.exit(0);
 }
 
-runPipeline();
+// runPipeline();
+
+
+storeOnFleekStorage('8-Jan-2023-20-15.json', "F:\\Users\\anudit\\Documents\\Github\\convobackups\\8-Jan-2023-20-15.json");
