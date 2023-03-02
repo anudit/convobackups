@@ -1,7 +1,6 @@
 import dotenv from 'dotenv'
 dotenv.config({ path: '.env.local' });
 
-import { Client, PrivateKey, ThreadID } from '@textile/hub';
 import Redis from "ioredis";
 import { MongoClient } from 'mongodb';
 
@@ -13,19 +12,7 @@ import { storeOnFleekStorage } from './adaptors/fleekstorage.mjs';
 import { storeOnFilebase } from './adaptors/filebase.mjs';
 import { storeOnWeb3Storage } from './adaptors/web3storage.mjs';
 
-const { TEXTILE_PK, TEXTILE_HUB_KEY_DEV, MONGODB_URI, TEXTILE_THREADID, NFTSTORAGE_KEY, PINATA_API_KEY, PINATA_API_SECRET, REDIS_CONNECTION} = process.env;
-
-const getClient = async () =>{
-
-    const identity = PrivateKey.fromString(TEXTILE_PK);
-    const client = await Client.withKeyInfo({
-        key: TEXTILE_HUB_KEY_DEV,
-        debug: true
-    })
-    await client.getToken(identity);
-    return client;
-
-}
+const { MONGODB_URI, REDIS_CONNECTION} = process.env;
 
 async function getRedisData() {
 
@@ -55,12 +42,11 @@ async function getRedisData() {
 
 }
 
-const getAllTrustScoreData = async () => {
+const getAllCollectionData = async (collectionName = "") => {
 
     const client = await MongoClient.connect(MONGODB_URI);
     let db = client.db('convo');
-    let coll = db.collection('cachedTrustScores');
-    // TODO: stream the data for mongdb and possibly stringify on the fly.
+    let coll = db.collection(collectionName);
     let completeData = await coll.find().toArray();
 
     return completeData;
@@ -68,18 +54,16 @@ const getAllTrustScoreData = async () => {
 }
 
 const getData = async () =>{
-    const threadClient = await getClient();
-    const threadId = ThreadID.fromString(TEXTILE_THREADID);
 
-    let snapshot_comments = await threadClient.find(threadId, 'comments', {});
+    let snapshot_comments = await getAllCollectionData('comments');
     console.log("🟢 snapshot.comments");
-    let snapshot_threads = await threadClient.find(threadId, 'threads', {});
+    let snapshot_threads = await getAllCollectionData('threads');
     console.log("🟢 snapshot.threads");
-    let snapshot_addressToThreadIds = await threadClient.find(threadId, 'addressToThreadIds', {});
+    let snapshot_addressToThreadIds = await getAllCollectionData('addressToThreadIds');
     console.log("🟢 snapshot.addressToThreadIds");
     // let snapshot_cachedTrustScores = await getAllTrustScoreData();
     // console.log("🟢 snapshot.cachedTrustScores");
-    let snapshot_bridge = await threadClient.find(threadId, 'bridge', {});
+    let snapshot_bridge = await getAllCollectionData('bridge');
     console.log("🟢 snapshot.bridge");
     let redis_data = await getRedisData();
     console.log("🟢 snapshot.redis_data");
